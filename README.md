@@ -9,8 +9,8 @@ Basic API Server where we write some middleware and practice deployment
 Links and Resources
 
 GitHub Actions ci/cd
-Dev back-end server url
-Prod back-end server url
+Dev back-end server url [url](https://github.com/Ty-Ap/server-deployment-practice)
+Prod back-end server url [url](https://snazzy-semifreddo-cfdead.netlify.app/)
 
 Setup
 .env requirements (where applicable)
@@ -31,7 +31,7 @@ npm test
 
 Any tests of note?
 Describe any tests that you did not complete, skipped, etc
-none
+deploy went awry somehow but tests passed.
 
 UML
 ![UML](assets/lab-01-uml.png)
