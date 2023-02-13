@@ -12,6 +12,7 @@ const app = express();
 
 app.get('/', logger, (req,res,next) => {
   req.statusCode(200).send(req.log);
+  next('yayyy');
 });
 
 app.get('/bad', (req,res,next) => {
