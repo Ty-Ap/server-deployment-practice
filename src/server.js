@@ -4,7 +4,7 @@ const express = require('express');
 const logger = require('./middleware/logger.js');
 const notFound = require('./handlers/404.js');
 const errorHandler = require('./handlers/500.js');
-const PORT = process.env.PORT || 3002;
+
 
 const app = express();
 
@@ -31,7 +31,7 @@ app.get('/bad', (req,res,next) => {
 app.use('*',notFound);
 app.use(errorHandler);
 
-const start = () =>{
+const start = (PORT) =>{
   app.listen(PORT,()=>console.log(`congrats youve got thumbs aka an active server on port ${PORT}`));
 };
 
