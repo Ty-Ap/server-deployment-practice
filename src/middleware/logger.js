@@ -1,8 +1,10 @@
 'use strict';
 
+
 const logger = (req, res, next) => {
-  req.log = 'this is a log!';
-  // console.log('this is a log!');
+  req.log = 'req log';
+  res.log = 'res log';
+  console.log(`this is a log from ${req.log} and ${res.log} `);
   next();
 };
 

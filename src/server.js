@@ -28,7 +28,7 @@ app.get('/bad', (req,res,next) => {
 
 });
 
-// app.use('*',notFound);
+app.use('*',notFound);
 app.use(errorHandler);
 
 const start = () =>{
