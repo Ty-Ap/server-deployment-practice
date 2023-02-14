@@ -2,16 +2,14 @@
 
 const express = require('express');
 const logger = require('./middleware/logger.js');
-
-const notFound = require('./handlers/404');
-const errorHandler = require('./handlers/500');
-
-const PORT = process.env.PORT || 3002;
+const notFound = require('./handlers/404.js');
+const errorHandler = require('./handlers/500.js');
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
 app.get('/', logger, (req,res,next) => {
-  req.statusCode(200).send(req.log);
+  res.status(200).send(req.log);
 });
 
 app.get('/bad', (req,res,next) => {
