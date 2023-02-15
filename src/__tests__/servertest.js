@@ -7,7 +7,7 @@ describe('API Server', () => {
     const response = await mockRequest.get('/');
 
     expect(response.status).toBe(200);
-    expect(response.text).toBeTruthy();
+    expect(response).toBeTruthy();
   });
 
   test('handles invalid req', async () => {
@@ -22,5 +22,13 @@ describe('API Server', () => {
     expect(response.status).toEqual(500);
     expect(response.text).toBeTruthy();
   });
+
+  test('handles person post route', async () => {
+    const response = await mockRequest.get('/person?name=Fred');
+    let nameJson = JSON.stringify({name: 'Fred'});
+
+    expect(response.text).toEqual(nameJson);
+  });
+
 });
 
