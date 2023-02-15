@@ -5,9 +5,13 @@ const logger = require('./middleware/logger.js');
 const notFound = require('./handlers/404.js');
 const errorHandler = require('./handlers/500.js');
 const validator= require('./middleware/validator.js');
+const customerRouter = require('./routes/customer');
 
 
 const app = express();
+
+app.use(express.json);
+app.use(customerRouter);
 
 app.get('/', logger, (req,res,next) => {
   res.status(200).send(req.log);
